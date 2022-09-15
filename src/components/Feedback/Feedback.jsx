@@ -1,20 +1,27 @@
 import React from "react";
+import PropTypes from 'prop-types';
+import { FeedbackList, FeedbackItem, FeedbackBtn } from './Feedback.styled';
 
 export const FeedbackOptions = ({options, onClickBtn}) => {
     return (   
-        <ul>
+        <FeedbackList>
             {options.map(option => (
-                <li key={option}>
-                    <button
+                <FeedbackItem key={option}>
+                    <FeedbackBtn
                         type="button"
                         name={option}
                         onClick={onClickBtn}
                         >
                         {option}
-                    </button>
-                </li>
+                    </FeedbackBtn>
+                </FeedbackItem>
             ))
             }
-        </ul>
+        </FeedbackList>
     );
 }
+
+FeedbackOptions.propTypes = {
+    options: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onClickBtn: PropTypes.func.isRequired,
+};
