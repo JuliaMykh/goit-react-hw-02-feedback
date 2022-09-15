@@ -15,11 +15,16 @@ export const FeedbackBtn = styled.button`
 
     font-family: inherit;
     font-size: 16px;
-    background: #eabcc3;
+    background-color: #efd1d5;
 
     width: 100px;
     height: 30px;
 
     border-radius: 5px;
     cursor: pointer;
+
+    &:hover{
+        background-color: #c55063;
+        transform: scale(1.2);
+    }
 `;
